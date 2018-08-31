@@ -1,0 +1,130 @@
+
+2005-05-27 17:54  paulf
+
+        * /dbfsak, /dbfsak/CHANGES, /dbfsak/CREDITS, /dbfsak/LICENSE,
+          /dbfsak/MANIFEST, /dbfsak/Makefile, /dbfsak/README,
+          /dbfsak/dbf.cpp, /dbfsak/dbf.h, /dbfsak/dbfsak.1,
+          /dbfsak/dbfsak.cpp: Initial import, version 2.0.  
+
+2005-05-27 17:58  paulf
+
+        * /dbfsak/CHANGES, /dbfsak/Makefile, /dbfsak/dbf.cpp,
+          /dbfsak/dbfsak.1, /dbfsak/dbfsak.cpp: Changed name to dbfsak. Add
+          support for creating rdb files. Add support for creating dbf files
+          from rdb structures. Add support for appending records from rdb
+          files.  
+
+2005-05-27 17:59  paulf
+
+        * /dbfsak/CHANGES, /dbfsak/Makefile: Version 2.3 Add 0x0d to end of
+          header. Remove extraneous variables. Change logical comparison
+          variables to unsigned.  
+
+2005-05-27 18:01  paulf
+
+        * /dbfsak/CHANGES: Version 2.4. Add ability to specify \t as <tab>
+          for delimiter. Change default delimiter to | per man page.  
+
+2005-05-27 18:03  paulf
+
+        * /dbfsak/CHANGES, /dbfsak/Makefile, /dbfsak/dbf.cpp,
+          /dbfsak/dbfsak.1, /dbfsak/dbfsak.cpp: Version 2.5. Change Makefile
+          to build tarball in a subdir of current directory, and  remove the
+          build subdirectory afterwards. Clean up non-NULL junk that appears
+          in headers when creating dbf files.  
+
+2005-05-27 18:04  paulf
+
+        * /dbfsak/CHANGES, /dbfsak/Makefile, /dbfsak/dbf.cpp: Version 2.6.
+          Miscellaneous bug fixes from last version.  
+
+2005-05-27 18:22  paulf
+
+        * /dbfsak/CHANGES, /dbfsak/MANIFEST, /dbfsak/Makefile,
+          /dbfsak/bool.h, /dbfsak/dbf.h, /dbfsak/dbfsak.1, /dbfsak/dbfsak.c:
+          Version 3.3. Change from C++ to C. Fixed segfault bug for FoxPro
+          2.6a files. Unknown cause, but removed a  troublesome and
+          unnecessary heap variable in dbf_table_rdump(). Repaired bug that
+          caused left-hand truncation of field names when  dumping structure
+          to PostgreSQL script (-s option).  
+
+2005-05-27 18:28  paulf
+
+        * /dbfsak/CHANGES, /dbfsak/MANIFEST, /dbfsak/Makefile,
+          /dbfsak/SOURCEFORGE-HOWTO: Version 3.4. Repaired bug caused by
+          dBase files with memo fields. These contain NULLs  in empty memo
+          fields, which screwed up record dumps. Repaired bug that happens on
+          the last field of records that are  "squeezed" using the -t
+          parameter; they had masses of trailing  whitespace.  
+
+2005-06-13 11:24  paulf
+
+        * /dbfsak/CHANGES, /dbfsak/MANIFEST, /dbfsak/Makefile, /dbfsak/dbf.h,
+          /dbfsak/dbfsak.c: Repair non-working nosql output. Consolidate all
+          record output into one routine. Split off memos into a separate
+          file. Changed some internal aspects of structures.  
+
+2005-06-13 11:25  paulf
+
+        * /dbfsak/dbfmemo.c: Add dbfmemo, after splitting memo routines off
+          into their own file.  
+
+2005-08-24 19:02  paulf
+
+        * /dbfsak/dbf.c: Bug fix: empty fields not trimming.  
+
+2005-08-24 19:02  paulf
+
+        * /dbfsak/Makefile: Don't know why this was left out.  
+
+2005-08-27 19:37  paulf
+
+        * /dbfsak/dbf.c: Fix bug introduced by last bug fix-- all empty
+          fields being trimmed.  
+
+2006-05-10 23:28  paulf
+
+        * /dbfsak/MANIFEST, /dbfsak/Makefile, /dbfsak/dbf.c, /dbfsak/dbf.h,
+          /dbfsak/dbfmemo.c, /dbfsak/dbfsak.c: Add changes for SQL inserts by
+          Carlos Correia <carlos@m16e.com>.  
+
+2006-05-10 23:30  paulf
+
+        * /dbfsak/CREDITS: Update credits file and VERSION file after Carlos'
+          revisions.  
+
+2006-09-04 12:09  paulf
+
+        * /dbfsak/dbf.c, /dbfsak/dbfsak.1: Fix to reading of header suggested
+          by Marat Khalitov (email2marat at gmail dot com). Fixes bug on 64
+          bit platforms.  
+
+2006-11-18 14:59  paulf
+
+        * /dbfsak/CHANGES, /dbfsak/CREDITS, /dbfsak/dbf.c, /dbfsak/dbf.h,
+          /dbfsak/dbfsak.1, /dbfsak/dbfsak.c: Addition of MySQL code.  
+
+2007-02-08 00:57  paulf
+
+        * /dbfsak/CREDITS, /dbfsak/dbf.c, /dbfsak/dbf.h, /dbfsak/dbfsak.1,
+          /dbfsak/dbfsak.c: Added switch to omit deleted records from DBFs.
+          NOTE: This changes the default behavior of some types of output,
+          which formerly would omit deleted records by default.  
+
+2013-04-07 23:36  paulf
+
+		* /dbfsak/dbf.c: Fixed a bug in dbf_rdb_append() which resulted in
+		  a SEGFAULT under certain circumstances.
+
+2013-04-08 11:06  paulf
+
+		* /dbfsak/dbf.c: Fixed a bug where the field vector was incorrect on
+		  field names which were a substring of each other.
+
+2017-01-19 16:15  paulf
+
+		* /dbfsak/VERSION, /dbfsak/dbf.c, /dbfsak/dbf.h, /dbfsak/dbfsak.c:
+		  More precisely specify variable sizes, since DBF files were
+		  originally 8-bit, then 16-bit, then 32-bit. Current code being
+		  worked on 64 bit platform.
+

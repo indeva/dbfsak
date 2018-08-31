@@ -1,0 +1,15 @@
+CHANGES
+ChangeLog
+CREDITS
+LICENSE
+MANIFEST
+Makefile
+README
+VERSION
+bool.h
+dbf.c
+dbf.h
+dbfmemo.c
+dbfsak.1
+dbfsak.c
+

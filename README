@@ -1,0 +1,40 @@
+4 February 2001
+Revised 7 April 2013
+
+I wrote this program (dbfsak) because of the fact that Midnight Commander
+uses a program called dbview, which doesn't work. Looking over the
+docs/source for dbview, it appears it was written long ago, abandoned, and
+then someone resurrected it with little or no modification. When I've tried
+to run it, it often hasn't worked. I needed something to display FoxPro
+data files, so I wrote this little program. Now, I just do a symlink from
+dbview to dbfdump (I made the command lines similar), and off I go.
+
+I'll leave it to the man page to tell you how to run it.
+
+Compilation and installation are the usual:
+
+make ; make install
+
+Installation is in the /usr/local tree. If you don't like this, edit the
+makefile.
+
+There are no extraordinary dependencies with this program. It is written
+in C and relies only on gcc and the standard C libraries. It was originally
+written in C, ported to C++ and then ported back to C again. I'm not a big
+fan of C++ and I didn't want to have to maintain it in C++.
+
+This was a quicky program. The code is not beautiful. Like most Open Source
+programs, I've added features to it over the years as I've needed them. If
+you have suggestions for improvement or bug reports, feel free. If you'd
+like to contribute code, let me know.
+
+I cannot claim perfection in this program. It may well have bugs. As such,
+I make no claims about the suitability of these programs for your
+application, and cannot assume responsibility for your use of them, or the
+results thereof.
+
+Naturally, this program is released under an Open Source license. Do with
+it as you will, but give me credit for the original work, if you please.
+
+Paul M. Foster
+

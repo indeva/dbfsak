@@ -1,0 +1,13 @@
+Paul M. Foster <paulf@sherman.mars.lan>	2017-01-19
+
+    Update field types to make them work under 64 bit platform.
+
+Paul M. Foster <paulf@quillandmouse.com>	2013-12-07
+
+    Add MySQL changes from Jorg Muller
+
+Paul M. Foster <paulf@quillandmouse.com>	2013-04-30
+
+    First commit of dbfsak under Git
+    This is version 4.5
+    CHANGES details changes prior to this date.

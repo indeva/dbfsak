@@ -1,0 +1,9 @@
+The following are the people who have been involved in the creation of
+dbfdump.
+
+Paul M. Foster <paulf@quillandmouse.com> : Original author and documentor.
+Francisco Reyes <fran@reyes.somos.net> : Suggestions and debugging.
+Carlos Correia <carlos@m16e.com> : Code for SQL inserts.
+Marat Khalitov <email2marat@gmail.com>: Fixes for 64 bit platforms.
+Marc Dufour <marc.dufour@emdx.org> : Code for MySQL stuff
+Jorg Muller <jfmueller@nettobotschaft.de> : Code for MySQL stuff
