@@ -203,6 +203,7 @@ int main(int argc, char *argv[])
 				dbf_data2sql(mydbf, delim, flags);
 			}
 			else	{// SQL_INSERT
+				dbf_header2sql_insert(F_SQL,mydbf);
 				delim = ',';
 				dbf_data2sql_insert( mydbf, delim, flags );
 			}
@@ -210,7 +211,7 @@ int main(int argc, char *argv[])
 	}
 	else {
 		// non-SQL
-		
+
 		if (flags & F_HDR)
 			dbf_dump_header(mydbf);
 		if (flags & F_FDESC)
