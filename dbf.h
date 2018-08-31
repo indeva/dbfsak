@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 // 2017-01-18 paulf: include file to define precise integer/long types
-#include <stdint-gcc.h>
+#include <stdint.h>
 #include "bool.h"
 
 #ifndef uchar
