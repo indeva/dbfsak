@@ -129,7 +129,7 @@ dbf_fspec *dbf_fspec_from_dbf(char b[F_FSPEC_LEN], ulong l)
 	dest = d->type;
 	orig = b + F_TYPE_OFS;
 	memcpy(byte, 1, F_TYPE_LEN);
-	
+
 	// length
 	dest = d->length;
 	orig = b + F_LENGTH_OFS;
@@ -881,7 +881,7 @@ void dbf_data2sql(dbf_table *t, char delim, int flags)
 	unsigned int n, end;
 
 	fname = malloc((strlen(t->filename) + 1) * sizeof(char));
-	strcpy(fname, t->filename);
+	strcpy(fname, basename(t->filename));
 	// sloppily remove .dbf from filename ;-}
 	p = strchr(fname, '.');
 	if (p)
@@ -909,7 +909,7 @@ void dbf_data2sql_insert( dbf_table *t, char delim, int flags )
 	MySQL = flags & F_MYSQL;
 
 	fname = malloc( (strlen(t->filename) + 1) * sizeof(char) );
-	strcpy(fname, t->filename);
+	strcpy(fname, basename(t->filename));
 	// sloppily remove .dbf from filename ;-}
 	p = strchr(fname, '.');
 	if (p)
@@ -934,7 +934,9 @@ void dbf_data2sql_insert( dbf_table *t, char delim, int flags )
 			printf( "insert into %s\n\t(", fname );
 
 		for (i = 0; i < t->fcount; i++) {
-			printf( ", " );
+			if (i > 0)
+				printf( ", " );
+
 			strcpy(fldname, t->fields[i]->name);
 
 			p = fldname;
@@ -948,7 +950,8 @@ void dbf_data2sql_insert( dbf_table *t, char delim, int flags )
 				printf( "%s", fldname );
 		}
 
-		printf(")\n\tvalues ( %d, ", n);
+		// printf(")\n\tvalues ( %d, ", n);
+		printf(")\n\tvalues (", n);
 		dbf_recout(t, delim, flags);
 		printf(");\n");
 	}
@@ -1095,7 +1098,7 @@ void dbf_rdb_append(dbf_table *t, char *s)
 			a = ++b;
 
 		} // while
-		
+
 	}
 	else
 		return;
@@ -1139,7 +1142,7 @@ void dbf_rdb_append(dbf_table *t, char *s)
 			a = ++b;
 
 		}
-		
+
 		// intact rbuf, so write out to file
 		fwrite(t->rbuf, 1, t->rlength, t->datafile);
 		t->rcount++;
