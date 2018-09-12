@@ -532,7 +532,7 @@ static void dbf_recout(dbf_table *t, char delim, int flags)
 						printf( "\'f\'" );
 						break;
 					case 'D':
-						printf( "\\N" );
+						printf("null");
 				}
 				if (i != t->fcount - 1) {
 					putchar(delim);
